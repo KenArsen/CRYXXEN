@@ -1,0 +1,10 @@
+{% extends 'music/base.html' %}
+
+{% block content %}
+
+<h1>Спасибо!</h1>
+
+<p>Ваша песня загружена...</p>
+<p>Если хотите еще<a href="{% url 'music:music' %}"> нажмите сюда. </a></p>
+
+{% endblock content %}

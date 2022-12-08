@@ -1,0 +1,16 @@
+{% extends 'music/base.html' %}
+
+{% block content %}
+
+    <h1>YouTube mp3</h1>
+
+    <p>Скачайте свою любимую песню...</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"/>
+    </form>
+
+{% endblock content %}
+
