@@ -5,9 +5,7 @@ from celery import shared_task
 
 @shared_task()
 def send_music_email_task(recipient_list, message):
-    # Отправляет электронное письмо, когда форма обратной связи была отправлена.
-
-    # download music
+    # скачает музыку
     music_info = youtube_dl.YoutubeDL().extract_info(url=message, download=False)
     musicname = f"{music_info['title']}.mp3"
     options = {
@@ -20,8 +18,9 @@ def send_music_email_task(recipient_list, message):
         ydl.download([music_info['webpage_url']])
     ans = "Загрузка завершена... {}".format(musicname)
 
+    # Отправляет электронное письмо, когда форма обратной связи была отправлена.
     send_mail(
-        "Hello",
+        "YouTube mp3",
         "\t" + ans + "\n\n\t" + message + "\n\nСпасибо!",
         "kenjegulov2002@gmail.com",
         [recipient_list],

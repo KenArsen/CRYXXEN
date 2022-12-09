@@ -3,13 +3,13 @@
 {% block content %}
 
     <h1>YouTube mp3</h1>
-
+    <h3> Скачать Youtube mp3, конвертировать Youtube в mp3</h3>
     <p>Скачайте свою любимую песню...</p>
 
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit"/>
+        <input type="submit", value="Получить ссылку mp3"/>
     </form>
 
 {% endblock content %}
